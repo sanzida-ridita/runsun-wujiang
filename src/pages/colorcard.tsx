@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import banner from "../assets/colorCardBanner.jpg"; // 👈 adjust if it's colorcardbanner.png/jpg
 
 type Card = { title: string; img: string; desc: string };
 
@@ -120,7 +121,7 @@ const Colorcards = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero */}
-      <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
+      {/* <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
         <img
           src="https://images.unsplash.com/photo-1611504496688-7a5df6a3e975?auto=format&fit=crop&w=1600&q=80"
           alt="Hero"
@@ -135,10 +136,10 @@ const Colorcards = () => {
             Discover classic Color Cards and our digital-first E-Color series.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Tabs */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 -mt-8 mb-8">
+      {/* <div className="border max-w-7xl mx-auto px-6 md:px-10 -mt-8 mb-8">
         <div className="bg-white shadow-md rounded-2xl p-3 flex gap-3 w-fit mx-auto">
           <TabButton active={tab === "color"} onClick={() => setTab("color")}>
             Color Cards ({baseCards.length})
@@ -147,11 +148,45 @@ const Colorcards = () => {
             E-Color Cards ({eColorCards.length})
           </TabButton>
         </div>
-      </div>
+      </div> */}
+
+
+
+
+      {/* Hero */}
+<section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
+  <img
+    src={banner}
+    alt="Hero"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-black/50" />
+  <div className="relative z-10 max-w-2xl p-4">
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">
+      Explore Our Cards
+    </h1>
+    <p className="text-lg">
+      Discover classic Color Cards and our digital-first E-Color series.
+    </p>
+  </div>
+</section>
+
+{/* Tabs overlay (pulled up & above hero) */}
+<div className="relative z-20 -mt-10 max-w-7xl mx-auto px-6 md:px-10 mb-8">
+  <div className="bg-white shadow-md rounded-2xl p-3 flex gap-3 w-fit mx-auto">
+    <TabButton active={tab === "color"} onClick={() => setTab("color")}>
+      Color Cards ({baseCards.length})
+    </TabButton>
+    <TabButton active={tab === "ecolor"} onClick={() => setTab("ecolor")}>
+      E-Color Cards ({eColorCards.length})
+    </TabButton>
+  </div>
+</div>
+
 
       {/* Title + Grid */}
       <h2 className="text-3xl font-semibold text-center text-[#b35b28] mb-2">
-        {title}
+        {title} 
       </h2>
       <CardGrid items={items} />
     </div>

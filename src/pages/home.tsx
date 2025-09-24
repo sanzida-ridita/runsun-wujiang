@@ -3,125 +3,104 @@ import HeroSection from "../components/herosection";
 import Products1 from "../assets/Products (1).jpg";
 import Products2 from "../assets/Products (2).jpg";
 import Products3 from "../assets/Products (3).jpg";
+import yarnVideo from "../assets/video/yarnFactory.mp4"; // 👈 adjust extension (.mp4 / .webm / .mov)
 
 export default function Home() {
   return (
     <div className="w-full">
-
       {/* Hero with carousel */}
-      <section className="w-full h-screen overflow-hidden" >
+      <section className="w-full h-screen overflow-hidden">
         <HeroSection />
       </section>
 
-     {/* Products Section */}
-<section className="max-w-7xl mx-auto px-6 md:px-10 py-16">
-  {/* Section Header */}
-  <div className="text-center mb-12">
-    <h2 className="text-4xl font-bold text-gray-800">Our Products</h2>
-    <p className="text-gray-600 mt-2">
-      Discover our premium range of products designed to meet your needs.
-    </p>
-  </div>
+      {/* Products Section */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-16">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">Our Products</h2>
+          <p className="text-gray-600 mt-2">
+            Discover our premium range of products designed to meet your needs.
+          </p>
+        </div>
 
-  {/* Product Boxes */}
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {/* Box 1 */}
-    <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-      <img
-        src={Products1}
-        alt="Quality"
-        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-      />
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="text-xl font-bold">Top Quality</h3>
-        <p className="text-sm mt-2">
-          International standards for premium products.
-        </p>
-      </div>
-    </div>
-
-    {/* Box 2 */}
-    <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-      <img
-        src={Products2}
-        alt="Range"
-        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-      />
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="text-xl font-bold">Wide Range</h3>
-        <p className="text-sm mt-2">
-          From yarn to finished fabrics, we have it all.
-        </p>
-      </div>
-    </div>
-
-    {/* Box 3 */}
-    <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-      <img
-        src={Products3}
-        alt="Sustainability"
-        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-      />
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="text-xl font-bold">Sustainability</h3>
-        <p className="text-sm mt-2">
-          Eco-friendly production for a better future.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Explore Yarn Products Section */}
-      <section className="relative max-w-7xl mx-auto px-6 md:px-10 py-24 flex justify-center items-center">
-        {/* Bottom Card */}
-        <div className="absolute w-10/12 h-5/6 my-auto  mx-auto inset-0 bg-orange-400 rounded-3xl transform rotate-1 md:rotate-1 shadow-xl"></div>
-
-        {/* Top Card */}
-        <div className="relative bg-white rounded-3xl shadow-2xl max-w-5xl w-full p-10 md:p-16 flex flex-col md:flex-row items-center gap-8 transform -rotate-1 md:-rotate-1">
-          {/* Column 1: Text */}
-          <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore our yarn products</h2>
-            <p className="text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus maxime veniam earum dolore provident consequuntur, fugiat similique eaque nesciunt repudiandae ea iste itaque, minima accusamus natus laudantium ducimus magnam! Molestias!
-            </p>
+        {/* Product Boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Box 1 */}
+          <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img
+              src={Products1}
+              alt="Quality"
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-xl font-bold">Top Quality</h3>
+              <p className="text-sm mt-2">
+                International standards for premium products.
+              </p>
+            </div>
           </div>
 
-          {/* Column 2: Button */}
-          <div className="md:w-1/2 flex justify-center items-center h-44">
-            <button className="px-6 py-3 border-2 border-orange-400 text-black font-semibold rounded-lg transition-colors duration-300 hover:bg-orange-400 hover:text-white">
-              View Products
-            </button>
+          {/* Box 2 */}
+          <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img
+              src={Products2}
+              alt="Range"
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-xl font-bold">Wide Range</h3>
+              <p className="text-sm mt-2">
+                From yarn to finished fabrics, we have it all.
+              </p>
+            </div>
+          </div>
+
+          {/* Box 3 */}
+          <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+            <img
+              src={Products3}
+              alt="Sustainability"
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-xl font-bold">Sustainability</h3>
+              <p className="text-sm mt-2">
+                Eco-friendly production for a better future.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Explore Yarn Products Section */}
 
+      <section className="relative max-w-7xl mx-auto px-6 md:px-10 py-24 flex justify-center items-center">
+        {/* Bottom Card (orange background) */}
+        <div className="absolute w-10/12 h-5/6 inset-0 mx-auto my-auto bg-orange-400 rounded-3xl transform rotate-1 md:rotate-1 shadow-xl"></div>
 
-      {/* Feature Cards Section
-      <section className="max-w-7xl mx-auto px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <FeatureCard
-          title="Certified Quality"
-          description="We follow international standards..."
-        />
-        <FeatureCard
-          title="Wide Product Range"
-          description="From yarn to fabrics..."
-        />
-        <FeatureCard
-          title="Sustainable Production"
-          description="Eco-friendly processes..."
-        />
-      </section> */}
+        {/* Top Card (video fills white box area) */}
+        <div className="relative bg-white rounded-3xl shadow-2xl max-w-5xl w-full p-0 overflow-hidden transform -rotate-1 md:-rotate-1">
+          <video
+            src={yarnVideo}
+            className="w-full h-80 object-fill"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
+      </section>
 
-      <section className="bg-orange-400 py-20">
+      <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           {/* Info Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 text-center">
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="text-orange-400 mb-3 text-3xl">📍</div>
               <h4 className="font-bold mb-2">OUR MAIN OFFICE</h4>
-              <p className="text-sm text-gray-700">SoHo 94 Broadway St New York, NY 1001</p>
+              <p className="text-sm text-gray-700">
+                SoHo 94 Broadway St New York, NY 1001
+              </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
@@ -140,14 +119,17 @@ export default function Home() {
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="text-orange-400 mb-3 text-3xl">✉️</div>
               <h4 className="font-bold mb-2">EMAIL</h4>
-              <a href="mailto:hello@theme.com" className="text-sm text-gray-700 hover:underline">
+              <a
+                href="mailto:hello@theme.com"
+                className="text-sm text-gray-700 hover:underline"
+              >
                 hello@theme.com
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-10 shadow-lg max-w-3xl mx-auto">
+          {/* <div className="bg-white rounded-2xl p-10 shadow-lg max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-orange-400 mb-6">Contact Us</h2>
             <form className="space-y-4">
               <input
@@ -171,10 +153,9 @@ export default function Home() {
                 SUBMIT
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </section>
-
     </div>
   );
 }
