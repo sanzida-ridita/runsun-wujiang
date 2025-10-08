@@ -111,7 +111,7 @@ const CardGrid = ({ items }: { items: Card[] }) => (
   </section>
 );
 
-const Colorcards = () => {
+const ColorCard = () => {
   // "color" = the 6 base cards, "ecolor" = 19 e-color cards
   const [tab, setTab] = useState<"color" | "ecolor">("color");
 
@@ -193,4 +193,4 @@ const Colorcards = () => {
   );
 };
 
-export default Colorcards;
+export default ColorCard;

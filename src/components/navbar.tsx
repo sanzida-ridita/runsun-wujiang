@@ -30,7 +30,7 @@ export default function Navbar() {
           Sustainability
         </Link>
         <Link
-          to={`/Color-Cards`}
+          to={`/color-cards`}
           className="text-white relative px-1 py-1 hover:border-b-2 hover:border-orange-400 transition"
         >
           Color Cards

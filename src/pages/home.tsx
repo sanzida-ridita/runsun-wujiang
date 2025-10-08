@@ -99,31 +99,36 @@ export default function Home() {
               <div className="text-orange-400 mb-3 text-3xl">📍</div>
               <h4 className="font-bold mb-2">OUR MAIN OFFICE</h4>
               <p className="text-sm text-gray-700">
-                SoHo 94 Broadway St New York, NY 1001
+                No.319 Yuanxin Road,Taoyuan Town,Wujiang District,Suzhou City,Jiangsu Province
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="text-orange-400 mb-3 text-3xl">📞</div>
               <h4 className="font-bold mb-2">PHONE NUMBER</h4>
-              <p className="text-sm text-gray-700">234-9876-5400</p>
-              <p className="text-sm text-gray-700">888-0123-4567 (Toll Free)</p>
+              <p className="text-sm text-gray-700">+8651263858128</p>
+              <p className="text-sm text-gray-700">+8618605732767</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="text-orange-400 mb-3 text-3xl">📠</div>
-              <h4 className="font-bold mb-2">FAX</h4>
-              <p className="text-sm text-gray-700">1-234-567-8900</p>
+              <h4 className="font-bold mb-2">
+Runsun Textile (Puyuan Branch)
+</h4>
+              <p className="text-sm text-gray-700">No.1638, Gongmao Road, Puyuan, Tongxiang, Zhejiang
+</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="text-orange-400 mb-3 text-3xl">✉️</div>
               <h4 className="font-bold mb-2">EMAIL</h4>
               <a
-                href="mailto:hello@theme.com"
+                href="mailto:ceo@okyarn.com
+"
                 className="text-sm text-gray-700 hover:underline"
               >
-                hello@theme.com
+                ceo@okyarn.com
+
               </a>
             </div>
           </div>
