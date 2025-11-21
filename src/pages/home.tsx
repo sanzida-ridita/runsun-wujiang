@@ -17,9 +17,9 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-16">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800">Our Products</h2>
+          <h2 className="text-4xl font-bold text-gray-800">Exibition</h2>
           <p className="text-gray-600 mt-2">
-            Discover our premium range of products designed to meet your needs.
+            Discover our prvious exebition photos.
           </p>
         </div>
 

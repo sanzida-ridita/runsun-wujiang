@@ -43,6 +43,24 @@ const autumnWinterFall: Card[] = [
   },
 ];
 
+const newFabrics: Card[] = [
+  { 
+    title: "Premium Knit",
+    img: "/collections/new1.png",
+    desc: "Soft, flexible knit ideal for modern apparel."
+  },
+  { 
+    title: "Rayon Shine",
+    img: "/collections/new2.png",
+    desc: "Smooth rayon with a subtle sheen for premium orders."
+  },
+  { 
+    title: "Patterned Jacquard",
+    img: "/collections/new3.png",
+    desc: "Intricate patterns woven with precision."
+  },
+];
+
 const TabButton = ({
   active,
   onClick,
@@ -89,12 +107,21 @@ const CardGrid = ({ items }: { items: Card[] }) => (
 );
 
 export default function Collection() {
-  const [tab, setTab] = useState<"spring" | "autumn">("spring");
-  const items = tab === "spring" ? springSummerFall : autumnWinterFall;
+  const [tab, setTab] = useState<"spring" | "autumn" | "new">("spring");
+
+  const items =
+    tab === "spring"
+      ? springSummerFall
+      : tab === "autumn"
+      ? autumnWinterFall
+      : newFabrics;
+
   const title =
     tab === "spring"
       ? "Spring And Summer ( 春夏 )"
-      : "Autumn And Winter ( 秋冬 )";
+      : tab === "autumn"
+      ? "Autumn And Winter ( 秋冬 )"
+      : "New Fabrics ( 新布片图 )";
 
   return (
     <div className="bg-gray-50 text-gray-800">
@@ -124,6 +151,9 @@ export default function Collection() {
           </TabButton>
           <TabButton active={tab === "autumn"} onClick={() => setTab("autumn")}>
             Autumn And Winter ( 秋冬 )
+          </TabButton>
+          <TabButton active={tab === "new"} onClick={() => setTab("new")}>
+            New Fabrics ( 新布片图 )
           </TabButton>
         </div>
       </div>
