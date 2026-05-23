@@ -2,7 +2,6 @@
 import HeroSection from "../components/heroSection";
 import { useTranslation } from "react-i18next";
 import VideoPlayer from "../components/VideoPlayer";
-import PremiumImage from "../components/PremiumImage";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -27,12 +26,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Box 1 */}
           <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-            <PremiumImage
+            <img
               src="/assets/images/Products (1).jpg"
               alt={t('home.exhibition.imageAlt1')}
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-              type="product"
-              fallbackTitle={t('home.exhibition.products.topQuality.title')}
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-xl font-bold">{t('home.exhibition.products.topQuality.title')}</h3>
@@ -44,12 +41,10 @@ export default function Home() {
 
           {/* Box 2 */}
           <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-            <PremiumImage
+            <img
               src="/assets/images/Products (2).jpg"
               alt={t('home.exhibition.imageAlt2')}
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-              type="product"
-              fallbackTitle={t('home.exhibition.products.wideRange.title')}
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-xl font-bold">{t('home.exhibition.products.wideRange.title')}</h3>
@@ -61,12 +56,10 @@ export default function Home() {
 
           {/* Box 3 */}
           <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-            <PremiumImage
+            <img
               src="/assets/images/Products (3).jpg"
               alt={t('home.exhibition.imageAlt3')}
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-              type="product"
-              fallbackTitle={t('home.exhibition.products.sustainability.title')}
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-xl font-bold">{t('home.exhibition.products.sustainability.title')}</h3>

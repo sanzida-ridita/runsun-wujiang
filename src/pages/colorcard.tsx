@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import PremiumImage from "../components/PremiumImage";
 
 type Card = { title: string; img: string; desc: string };
 
@@ -128,12 +127,11 @@ const CardGrid = ({ items }: { items: Card[] }) => (
           key={index}
           className="relative rounded-xl shadow-lg overflow-hidden group cursor-pointer transform transition hover:-translate-y-2 bg-white"
         >
-          <PremiumImage
+          <img
             src={card.img}
             alt={card.title}
             className="w-full h-64 object-cover"
-            type="card"
-            fallbackTitle={card.title}
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-center p-4">
             <h3 className="text-xl font-bold text-yellow-300 mb-2">
@@ -170,12 +168,10 @@ const ColorCard = () => {
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
-        <PremiumImage
+        <img
           src="/assets/images/colorCardBanner.jpg"
           alt={t('colorCard.hero.alt')}
           className="absolute inset-0 w-full h-full object-cover"
-          type="banner"
-          fallbackTitle="Explore Our Cards"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-2xl p-4">
