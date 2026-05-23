@@ -1,97 +1,97 @@
 import React, { useState } from "react";
-import banner from "../assets/colorCardBanner.jpg"; // 👈 adjust if it's colorcardbanner.png/jpg
+import { useTranslation } from "react-i18next";
 
 type Card = { title: string; img: string; desc: string };
 
 // --- Color Cards ---
-const baseCards: Card[] = [
+const getBaseCards = (t: any): Card[] => [
   {
-    title: "Cashmere",
+    title: t('colorCard.products.cashmere.title'),
     img: "/colorcard/cashmere.png",
-    desc: "Luxuriously soft, lightweight, and incredibly warm. Cashmere fabric offers timeless elegance, unmatched comfort, and durability—perfect for refined everyday wear and premium sustainable fashion.",
+    desc: t('colorCard.products.cashmere.desc'),
   },
   {
-    title: "Human and Nature collection",
+    title: t('colorCard.products.humanNature.title'),
     img: "/colorcard/humanandnature.png",
-    desc: "Where comfort meets sustainability — Human and Nature fabric, crafted for people, inspired by the planet.",
+    desc: t('colorCard.products.humanNature.desc'),
   },
   {
-    title: "Luxury Material",
+    title: t('colorCard.products.luxuryMaterial.title'),
     img: "/colorcard/luxury.png",
-    desc: "Refined, versatile, and eco-friendly. A fabric that embodies elegance and care for the earth.",
+    desc: t('colorCard.products.luxuryMaterial.desc'),
   },
   {
-    title: "Semi Worsted",
+    title: t('colorCard.products.semiWorsted.title'),
     img: "/colorcard/semiworsted.png",
-    desc: "Smooth, durable, and breathable. A fabric crafted for comfort with a refined finish.",
+    desc: t('colorCard.products.semiWorsted.desc'),
   },
   {
-    title: "Sustainable & Function collection",
+    title: t('colorCard.products.sustainableFunction.title'),
     img: "/colorcard/sustainable.png",
-    desc: "Eco-friendly, functional, and stylish — the Sustainable & Function Collection is your everyday conscious choice.",
+    desc: t('colorCard.products.sustainableFunction.desc'),
   },
   {
-    title: "Traditional Woolen",
+    title: t('colorCard.products.traditionalWoolen.title'),
     img: "/colorcard/traditionalwoolen.png",
-    desc: "Heritage in every thread — Traditional Woolen combines natural warmth with lasting durability.",
+    desc: t('colorCard.products.traditionalWoolen.desc'),
   },
 ];
 
 // --- E-Color Cards ---
-const eColorCards: Card[] = [
+const getEColorCards = (t: any): Card[] => [
   {
-    title: "Bestseller",
+    title: t('colorCard.products.bestseller.title'),
     img: "/ecolor/bestseller.png",
-    desc: "Digitally curated palette with precise repeatability across batches.",
+    desc: t('colorCard.products.bestseller.desc'),
   },
   {
-    title: "Runsun 9",
+    title: t('colorCard.products.runsun9.title'),
     img: "/ecolor/runsun9.png",
-    desc: "Digitally curated palette with precise repeatability across batches.",
+    desc: t('colorCard.products.runsun9.desc'),
   },
   {
-    title: "Runsun A",
+    title: t('colorCard.products.runsunA.title'),
     img: "/ecolor/runsunA.png",
-    desc: "Digitally curated palette with precise repeatability across batches.",
+    desc: t('colorCard.products.runsunA.desc'),
   },
   {
-    title: "Runsun J",
+    title: t('colorCard.products.runsunJ.title'),
     img: "/ecolor/runsunJ.png",
-    desc: "Digitally curated palette with precise repeatability across batches.",
+    desc: t('colorCard.products.runsunJ.desc'),
   },
   ...Array.from({ length: 15 }).map((_, i) => ({
-    title: `E-Color ${i + 5}`,
+    title: `${t('colorCard.products.eColorPlaceholder.title')} ${i + 5}`,
     img: "/ecolor/placeholder.png", // 👈 placeholder image
-    desc: "Image coming soon...",
+    desc: t('colorCard.products.eColorPlaceholder.desc'),
   })),
 ];
 
 // --- Models Section ---
-const modelCards: Card[] = [
+const getModelCards = (t: any): Card[] => [
   {
-    title: "Model 01",
+    title: t('colorCard.products.model1.title'),
     img: "/models/model1.png",
-    desc: "Showcasing our latest fashion material in action.",
+    desc: t('colorCard.products.model1.desc'),
   },
   {
-    title: "Model 02",
+    title: t('colorCard.products.model2.title'),
     img: "/models/model2.png",
-    desc: "A blend of style and sustainability.",
+    desc: t('colorCard.products.model2.desc'),
   },
   {
-    title: "Model 03",
+    title: t('colorCard.products.model3.title'),
     img: "/models/model3.png",
-    desc: "Premium fabrics captured in modern fashion form.",
+    desc: t('colorCard.products.model3.desc'),
   },
   {
-    title: "Model 04",
+    title: t('colorCard.products.model4.title'),
     img: "/models/model4.png",
-    desc: "Comfort meets elegance in motion.",
+    desc: t('colorCard.products.model4.desc'),
   },
   {
-    title: "Model 05",
+    title: t('colorCard.products.model5.title'),
     img: "/models/model5.png",
-    desc: "Aesthetic simplicity and timeless design.",
+    desc: t('colorCard.products.model5.desc'),
   },
 ];
 
@@ -146,39 +146,40 @@ const CardGrid = ({ items }: { items: Card[] }) => (
 );
 
 const ColorCard = () => {
+  const { t } = useTranslation();
   // now 3 tabs: color | ecolor | models
   const [tab, setTab] = useState<"color" | "ecolor" | "models">("color");
 
   const items =
     tab === "color"
-      ? baseCards
+      ? getBaseCards(t)
       : tab === "ecolor"
-      ? eColorCards
-      : modelCards;
+      ? getEColorCards(t)
+      : getModelCards(t);
 
   const title =
     tab === "color"
-      ? "Color Cards"
+      ? t('colorCard.tabs.colorCards')
       : tab === "ecolor"
-      ? "E-Color Cards"
-      : "Models";
+      ? t('colorCard.tabs.eColorCards')
+      : t('colorCard.tabs.models');
 
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
         <img
-          src={banner}
-          alt="Hero"
+          src="/assets/images/colorCardBanner.jpg"
+          alt={t('colorCard.hero.alt')}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-2xl p-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            Explore Our Cards
+            {t('colorCard.hero.title')}
           </h1>
           <p className="text-lg">
-            Discover Color Cards, E-Color Cards, and our Model Showcase.
+            {t('colorCard.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -187,13 +188,13 @@ const ColorCard = () => {
       <div className="relative z-20 -mt-10 max-w-7xl mx-auto px-6 md:px-10 mb-8">
         <div className="bg-white shadow-md rounded-2xl p-3 flex gap-3 flex-wrap justify-center">
           <TabButton active={tab === "color"} onClick={() => setTab("color")}>
-            Color Cards ({baseCards.length})
+            {t('colorCard.tabs.colorCards')} (6)
           </TabButton>
           <TabButton active={tab === "ecolor"} onClick={() => setTab("ecolor")}>
-            E-Color Cards ({eColorCards.length})
+            {t('colorCard.tabs.eColorCards')} (19)
           </TabButton>
           <TabButton active={tab === "models"} onClick={() => setTab("models")}>
-            Models ({modelCards.length})
+            {t('colorCard.tabs.models')} (5)
           </TabButton>
         </div>
       </div>

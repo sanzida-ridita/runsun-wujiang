@@ -1,63 +1,63 @@
 import React, { useState } from "react";
-import banner from "../assets/colorCardBanner.jpg"; // Reuse ContactPage style banner
+import { useTranslation } from "react-i18next";
 
-type Card = { 
-  title: string; 
-  img: string; 
-  desc: string; 
+type Card = {
+  title: string;
+  img: string;
+  desc: string;
 };
 
-const springSummerFall: Card[] = [
-  { 
-    title: "Lightweight Cotton", 
-    img: "/collections/spring1.png", 
-    desc: "Breathable cotton for warm days and easy layering." 
+const getSpringSummerFall = (t: any): Card[] => [
+  {
+    title: t('collection.products.lightweightCotton.title'),
+    img: "/collections/spring1.png",
+    desc: t('collection.products.lightweightCotton.desc')
   },
-  { 
-    title: "Linen Blend", 
-    img: "/collections/spring2.png", 
-    desc: "Crisp, airy linen for effortless summer outfits." 
+  {
+    title: t('collection.products.linenBlend.title'),
+    img: "/collections/spring2.png",
+    desc: t('collection.products.linenBlend.desc')
   },
-  { 
-    title: "Pastel Collection", 
-    img: "/collections/spring3.png", 
-    desc: "Soft hues tailored to Spring/Summer palettes." 
-  },
-];
-
-const autumnWinterFall: Card[] = [
-  { 
-    title: "Wool Blend", 
-    img: "/collections/winter1.png", 
-    desc: "Warmth-forward wool blends for cooler weather." 
-  },
-  { 
-    title: "Cashmere Luxe", 
-    img: "/collections/winter2.png", 
-    desc: "Soft, insulating cashmere designed for elegance." 
-  },
-  { 
-    title: "Deep Tones", 
-    img: "/collections/winter3.png", 
-    desc: "Rich, dark shades perfect for A/W statements." 
+  {
+    title: t('collection.products.pastelCollection.title'),
+    img: "/collections/spring3.png",
+    desc: t('collection.products.pastelCollection.desc')
   },
 ];
 
-const newFabrics: Card[] = [
-  { 
-    title: "Premium Knit",
+const getAutumnWinterFall = (t: any): Card[] => [
+  {
+    title: t('collection.products.woolBlend.title'),
+    img: "/collections/winter1.png",
+    desc: t('collection.products.woolBlend.desc')
+  },
+  {
+    title: t('collection.products.cashmereLuxe.title'),
+    img: "/collections/winter2.png",
+    desc: t('collection.products.cashmereLuxe.desc')
+  },
+  {
+    title: t('collection.products.deepTones.title'),
+    img: "/collections/winter3.png",
+    desc: t('collection.products.deepTones.desc')
+  },
+];
+
+const getNewFabrics = (t: any): Card[] => [
+  {
+    title: t('collection.products.premiumKnit.title'),
     img: "/collections/new1.png",
-    desc: "Soft, flexible knit ideal for modern apparel."
+    desc: t('collection.products.premiumKnit.desc')
   },
-  { 
-    title: "Rayon Shine",
+  {
+    title: t('collection.products.rayonShine.title'),
     img: "/collections/new2.png",
-    desc: "Smooth rayon with a subtle sheen for premium orders."
+    desc: t('collection.products.rayonShine.desc')
   },
-  { 
-    title: "Patterned Jacquard",
+  {
+    title: t('collection.products.patternedJacquard.title'),
     img: "/collections/new3.png",
-    desc: "Intricate patterns woven with precision."
+    desc: t('collection.products.patternedJacquard.desc')
   },
 ];
 
@@ -82,7 +82,7 @@ const TabButton = ({
   </button>
 );
 
-const CardGrid = ({ items }: { items: Card[] }) => (
+const CardGrid = ({ items, t }: { items: Card[]; t: any }) => (
   <section className="py-16 px-6 md:px-16 bg-gray-50 text-gray-800">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {items.map((card) => (
@@ -92,7 +92,7 @@ const CardGrid = ({ items }: { items: Card[] }) => (
         >
           <img
             src={card.img}
-            alt={`${card.title} fabric collection`}
+            alt={`${card.title} ${t('collection.hero.alt')}`}
             className="w-full h-64 object-cover"
             loading="lazy"
           />
@@ -107,38 +107,39 @@ const CardGrid = ({ items }: { items: Card[] }) => (
 );
 
 export default function Collection() {
+  const { t } = useTranslation();
   const [tab, setTab] = useState<"spring" | "autumn" | "new">("spring");
 
   const items =
     tab === "spring"
-      ? springSummerFall
+      ? getSpringSummerFall(t)
       : tab === "autumn"
-      ? autumnWinterFall
-      : newFabrics;
+      ? getAutumnWinterFall(t)
+      : getNewFabrics(t);
 
   const title =
     tab === "spring"
-      ? "Spring And Summer ( 春夏 )"
+      ? t('collection.tabs.springSummer')
       : tab === "autumn"
-      ? "Autumn And Winter ( 秋冬 )"
-      : "New Fabrics ( 新布片图 )";
+      ? t('collection.tabs.autumnWinter')
+      : t('collection.tabs.newFabrics');
 
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* HERO Section */}
       <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
         <img
-          src={banner}
-          alt="Collections Hero"
+          src="/assets/images/colorCardBanner.jpg"
+          alt={t('collection.hero.alt')}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-3xl p-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-3">
-            Explore Our Collections
+            {t('collection.hero.title')}
           </h1>
           <p className="text-lg">
-            Discover seasonal fabric collections crafted for every occasion.
+            {t('collection.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -147,13 +148,13 @@ export default function Collection() {
       <div className="relative z-20 -mt-10 max-w-7xl mx-auto px-6 md:px-10 mb-8">
         <div className="bg-white shadow-md rounded-2xl p-3 flex gap-3 w-fit mx-auto">
           <TabButton active={tab === "spring"} onClick={() => setTab("spring")}>
-            Spring And Summer ( 春夏 )
+            {t('collection.tabs.springSummer')}
           </TabButton>
           <TabButton active={tab === "autumn"} onClick={() => setTab("autumn")}>
-            Autumn And Winter ( 秋冬 )
+            {t('collection.tabs.autumnWinter')}
           </TabButton>
           <TabButton active={tab === "new"} onClick={() => setTab("new")}>
-            New Fabrics ( 新布片图 )
+            {t('collection.tabs.newFabrics')}
           </TabButton>
         </div>
       </div>
@@ -162,7 +163,7 @@ export default function Collection() {
       <h2 className="text-3xl font-semibold text-center text-[#b35b28] mb-2">
         {title}
       </h2>
-      <CardGrid items={items} />
+      <CardGrid items={items} t={t} />
     </div>
   );
 }

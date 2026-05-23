@@ -1,23 +1,23 @@
-import React from "react";
-import banner from "../assets/colorCardBanner.jpg"; // 👈 you can swap for a dedicated sustainability banner
+import { useTranslation } from "react-i18next";
 
 export default function Sustainability() {
+  const { t } = useTranslation();
   const topics = [
     {
-      title: "Our Commitments",
-      desc: "Long-term dedication to responsible sourcing, eco-friendly practices, and innovation toward a greener future.",
+      title: t('sustainability.topics.commitments.title'),
+      desc: t('sustainability.topics.commitments.desc'),
     },
     {
-      title: "Runsun Natural Farm",
-      desc: "Partnering with local farms to ensure transparency, animal welfare, and naturally grown fibers.",
+      title: t('sustainability.topics.naturalFarm.title'),
+      desc: t('sustainability.topics.naturalFarm.desc'),
     },
     {
-      title: "Carbon² – Carbon Neutrality",
-      desc: "Progressive initiatives to reduce carbon emissions across production, supply chain, and operations.",
+      title: t('sustainability.topics.carbonNeutrality.title'),
+      desc: t('sustainability.topics.carbonNeutrality.desc'),
     },
     {
-      title: "Certifications & Accolades",
-      desc: "Industry-recognized certifications and awards validating our journey toward sustainable manufacturing.",
+      title: t('sustainability.topics.certifications.title'),
+      desc: t('sustainability.topics.certifications.desc'),
     },
   ];
 
@@ -26,15 +26,15 @@ export default function Sustainability() {
       {/* HERO (same style as ContactPage) */}
       <section className="relative h-[35vh] md:h-[50vh] flex items-center justify-center text-white text-center">
         <img
-          src={banner} // 👈 replace with a sustainability banner if available
+          src="/assets/images/colorCardBanner.jpg" // 👈 replace with a sustainability banner if available
           alt="Sustainability Hero"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-3xl p-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Sustainability</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">{t('sustainability.hero.title')}</h1>
           <p className="text-lg md:text-xl">
-            Responsible practices shaping a better tomorrow.
+            {t('sustainability.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function Sustainability() {
           {/* LEFT COLUMN: list of topics */}
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-[#b35b28] mb-4">
-              Sustainability Focus
+              {t('sustainability.focus')}
             </h2>
             <ul className="space-y-4">
               {topics.map((topic, idx) => (
@@ -61,7 +61,7 @@ export default function Sustainability() {
           <div className="relative rounded-xl overflow-hidden shadow-lg">
             <img
               src="/sustainability/goats.jpg" // 👈 place in /public/sustainability
-              alt="Eco Practices"
+              alt={t('sustainability.hero.alt')}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/20" />
