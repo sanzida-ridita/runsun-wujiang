@@ -1,6 +1,7 @@
 // import FeatureCard from "../components/featureCard";
 import HeroSection from "../components/heroSection";
 import { useTranslation } from "react-i18next";
+import VideoPlayer from "../components/VideoPlayer";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -76,13 +77,20 @@ export default function Home() {
         {/* Bottom Card (orange background) */}
         <div className="absolute w-10/12 h-5/6 inset-0 mx-auto my-auto bg-orange-400 rounded-3xl transform rotate-1 md:rotate-1 shadow-xl"></div>
 
-        {/* Top Card (image placeholder instead of video) */}
+        {/* Top Card (video with error handling) */}
         <div className="relative bg-white rounded-3xl shadow-2xl max-w-5xl w-full p-0 overflow-hidden transform -rotate-1 md:-rotate-1">
-          <div className="w-full h-80 bg-gradient-to-br from-[#1b2b3d] to-[#b35b28] flex items-center justify-center">
-            <div className="text-center text-white">
-              <h3 className="text-2xl font-bold mb-2">Video Section</h3>
-              <p className="text-sm opacity-80">Video will be optimized soon</p>
-            </div>
+          <div className="w-full h-80">
+            <VideoPlayer
+              src="/assets/video/yarnFactory.mp4"
+              fallback={
+                <div className="w-full h-80 bg-gradient-to-br from-[#1b2b3d] to-[#b35b28] flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <h3 className="text-2xl font-bold mb-2">Video Section</h3>
+                    <p className="text-sm opacity-80">Video temporarily unavailable</p>
+                  </div>
+                </div>
+              }
+            />
           </div>
         </div>
       </section>
