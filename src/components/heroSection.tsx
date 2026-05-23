@@ -2,6 +2,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
+import PremiumImage from "./PremiumImage";
 import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpg";
 import hero3 from "../assets/hero3.jpg";
@@ -50,11 +51,13 @@ export default function HeroSection() {
               key={slide.id}
               className="embla__slide flex-shrink-0 w-full h-full"
             >
-              <img
+              <PremiumImage
                 src={slide.image}
                 alt={slide.alt}
                 className="w-full h-full object-cover"
+                type="hero"
                 loading="eager"
+                fallbackTitle="Runsun Factory"
               />
             </div>
           ))}

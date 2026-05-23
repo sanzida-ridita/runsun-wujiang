@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Search, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import PremiumImage from "./PremiumImage";
 import sunmunLogo from "../assets/sunmun-logo.jpeg";
 
 export default function Navbar() {
@@ -52,10 +53,12 @@ export default function Navbar() {
 
       {/* Center - Logo */}
       <div className="absolute left-1/2 transform -translate-x-1/2 border">
-        <img
+        <PremiumImage
           src={sunmunLogo}
           alt={t('navbar.logoAlt')}
           className="w-full h-12 object-cover group-hover:scale-105 transition-transform duration-500"
+          type="logo"
+          fallbackTitle="Runsun Textile"
         />
       </div>
 

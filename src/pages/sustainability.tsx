@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import PremiumImage from "../components/PremiumImage";
 
 export default function Sustainability() {
   const { t } = useTranslation();
@@ -59,10 +60,12 @@ export default function Sustainability() {
 
           {/* RIGHT COLUMN: illustrative image */}
           <div className="relative rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/sustainability/goats.jpg" // 👈 place in /public/sustainability
+            <PremiumImage
+              src="/assets/images/hero1.jpg"
               alt={t('sustainability.hero.alt')}
               className="w-full h-full object-cover"
+              type="banner"
+              fallbackTitle="Sustainable Practices"
             />
             <div className="absolute inset-0 bg-black/20" />
           </div>
