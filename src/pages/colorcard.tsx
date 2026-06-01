@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import PDFModal from "../components/PDFModal";
 
@@ -286,17 +286,22 @@ const CardGrid = ({ items, showPdf, onCardClick }: { items: Card[]; showPdf?: bo
       {items.map((card, index) => (
         <div
           key={index}
-          className={`relative rounded-xl shadow-lg overflow-hidden group cursor-pointer transform transition hover:-translate-y-2 bg-white ${
+          className={`relative rounded-xl shadow-lg overflow-hidden group cursor-pointer transform transition hover:-translate-y-2 bg-white will-change-transform ${
             showPdf && card.pdfLink ? "hover:shadow-2xl" : ""
           }`}
           onClick={() => showPdf && card.pdfLink && onCardClick?.(card)}
         >
-          <img
-            src={card.img}
-            alt={card.title}
-            className="w-full h-48 sm:h-56 md:h-64 object-cover"
-            loading="lazy"
-          />
+          {/* Image with optimization */}
+          <div className="relative aspect-[3/4] bg-gray-100">
+            <img
+              src={card.img}
+              alt={card.title}
+              className="w-full h-full object-cover"
+              loading={index < 6 ? "eager" : "lazy"}
+              fetchPriority={index < 3 ? "high" : "auto"}
+              style={{ contentVisibility: "auto" }}
+            />
+          </div>
           <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-center p-3 sm:p-4">
             <h3 className="text-base sm:text-lg md:text-xl font-bold text-yellow-300 mb-2">
               {card.title}
@@ -318,6 +323,22 @@ const ColorCard = () => {
   const { t } = useTranslation();
   const [tab, setTab] = useState<"color" | "ecolor" | "models">("color");
   const [pdfModal, setPdfModal] = useState({ isOpen: false, pdfUrl: "", title: "" });
+
+  // Preload critical images for faster initial load
+  useEffect(() => {
+    const criticalImages = [
+      "/colorcard/cashmere.png",
+      "/colorcard/humanandnature.png",
+      "/colorcard/luxury.png",
+      "/ecolor/bestseller.png",
+      "/assets/models/model_1.jpg",
+    ];
+
+    criticalImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const items =
     tab === "color"
