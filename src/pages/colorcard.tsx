@@ -72,92 +72,92 @@ const getEColorCards = (t: any): Card[] => [
   },
   {
     title: "RUNSUN方片K",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunA.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN方片K.pdf"
   },
   {
     title: "RUNSUN方片Q",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsun9.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN方片Q.pdf"
   },
   {
     title: "RUNSUN梅花6",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/bestseller.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN梅花6.pdf"
   },
   {
     title: "RUNSUN梅花7",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunJ.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN梅花7.pdf"
   },
   {
     title: "RUNSUN梅花8",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunA.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN梅花8.pdf"
   },
   {
     title: "RUNSUN梅花9",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsun9.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN梅花9.pdf"
   },
   {
     title: "RUNSUN梅花A",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/bestseller.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN梅花A.pdf"
   },
   {
     title: "RUNSUN梅花Q",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunJ.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN梅花Q.pdf"
   },
   {
     title: "RUNSUN红桃A",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunA.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN红桃A.pdf"
   },
   {
     title: "RUNSUN红桃J",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsun9.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN红桃J.pdf"
   },
   {
     title: "RUNSUN红桃K",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/bestseller.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN红桃K.pdf"
   },
   {
     title: "RUNSUN红桃Q",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunA.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN红桃Q.pdf"
   },
   {
     title: "RUNSUN黑桃6",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsunJ.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN黑桃6.pdf"
   },
   {
     title: "RUNSUN黑桃7",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/runsun9.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN黑桃7.pdf"
   },
   {
     title: "RUNSUN黑桃8",
-    img: "/ecolor/placeholder.png",
-    desc: t('colorCard.products.eColorPlaceholder.desc'),
+    img: "/ecolor/bestseller.png", // Using available image as placeholder
+    desc: "Premium e-color card collection",
     pdfLink: "/assets/pdf/RUNSUN黑桃8.pdf"
   },
 ];
