@@ -54,42 +54,42 @@ export default function Contact() {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* ---------- HERO SECTION ---------- */}
-      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-white text-center overflow-hidden">
+      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center text-white text-center overflow-hidden">
         {/* Background gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1b2b3d] via-[#2d4a6a] to-[#b35b28] opacity-90" />
 
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-32 h-32 border-2 border-white/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white/15 rounded-lg transform rotate-45" />
-          <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border border-white/20 rounded-full" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-5 left-5 sm:top-10 sm:left-10 w-12 h-12 sm:w-20 sm:h-20 border-2 border-white/20 rounded-full animate-pulse" />
+          <div className="absolute bottom-5 right-5 sm:bottom-10 sm:right-10 w-16 h-16 sm:w-32 sm:h-32 border-2 border-white/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/4 w-10 h-10 sm:w-16 sm:h-16 border border-white/15 rounded-lg transform rotate-45" />
+          <div className="absolute bottom-1/4 right-1/4 w-8 h-8 sm:w-12 sm:h-12 border border-white/20 rounded-full" style={{ animationDelay: '2s' }} />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl px-4">
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
-              <span className="w-2 h-2 bg-[#b35b28] rounded-full animate-pulse" />
+        <div className="relative z-10 max-w-4xl px-4 sm:px-6">
+          <div className="mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#b35b28] rounded-full animate-pulse" />
               <span className="font-medium">Global Reach • Local Excellence</span>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-2xl tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 sm:mb-6 drop-shadow-2xl tracking-tight">
             {t('contact.hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl opacity-90 max-w-2xl mx-auto font-light leading-relaxed">
             {t('contact.hero.subtitle')}
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link
               to="/"
-              className="px-8 py-3 bg-white text-[#1b2b3d] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-[#1b2b3d] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg"
             >
               Back to Home
             </Link>
             <a
               href="mailto:ceo@okyarn.com"
-              className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#1b2b3d] transition-all duration-300"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#1b2b3d] transition-all duration-300"
             >
               Email Us
             </a>
@@ -98,55 +98,55 @@ export default function Contact() {
       </section>
 
       {/* ---------- CONTACT GRID ---------- */}
-      <section className="max-w-7xl mx-auto py-20 px-6 md:px-12">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      <section className="max-w-7xl mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             {t('contact.locations.title')}
           </h2>
-          <div className="w-24 h-1 bg-[#b35b28] mx-auto rounded-full"></div>
+          <div className="w-16 sm:w-24 h-1 bg-[#b35b28] mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {offices.map((office, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+              className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 relative overflow-hidden group"
             >
               {/* Decorative corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#b35b28]/10 to-transparent rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-bl from-[#b35b28]/10 to-transparent rounded-bl-full" />
 
               <div className="relative z-10">
-                <h3 className="text-xl font-bold text-[#b35b28] mb-4 group-hover:text-[#b35b28]/80 transition">
+                <h3 className="text-lg sm:text-xl font-bold text-[#b35b28] mb-3 sm:mb-4 group-hover:text-[#b35b28]/80 transition">
                   {office.title}
                 </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {office.address && (
-                    <div className="flex items-start gap-3 text-gray-700">
-                      <div className="bg-[#b35b28]/10 p-2 rounded-lg">
-                        <FaMapMarkerAlt className="text-[#b35b28]" />
+                    <div className="flex items-start gap-2 sm:gap-3 text-gray-700">
+                      <div className="bg-[#b35b28]/10 p-1.5 sm:p-2 rounded-lg shrink-0">
+                        <FaMapMarkerAlt className="w-4 h-4 sm:w-5 sm:h-5 text-[#b35b28]" />
                       </div>
-                      <span className="text-sm leading-relaxed">{office.address}</span>
+                      <span className="text-xs sm:text-sm leading-relaxed">{office.address}</span>
                     </div>
                   )}
 
                   {office.phone && (
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <div className="bg-[#b35b28]/10 p-2 rounded-lg">
-                        <FaPhoneAlt className="text-[#b35b28]" />
+                    <div className="flex items-center gap-2 sm:gap-3 text-gray-700">
+                      <div className="bg-[#b35b28]/10 p-1.5 sm:p-2 rounded-lg shrink-0">
+                        <FaPhoneAlt className="w-4 h-4 sm:w-5 sm:h-5 text-[#b35b28]" />
                       </div>
-                      <span className="text-sm">{office.phone}</span>
+                      <span className="text-xs sm:text-sm">{office.phone}</span>
                     </div>
                   )}
 
                   {office.email && (
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <div className="bg-[#b35b28]/10 p-2 rounded-lg">
-                        <FaEnvelope className="text-[#b35b28]" />
+                    <div className="flex items-center gap-2 sm:gap-3 text-gray-700">
+                      <div className="bg-[#b35b28]/10 p-1.5 sm:p-2 rounded-lg shrink-0">
+                        <FaEnvelope className="w-4 h-4 sm:w-5 sm:h-5 text-[#b35b28]" />
                       </div>
                       <a
                         href={`mailto:${office.email}`}
-                        className="text-sm text-[#b35b28] hover:underline"
+                        className="text-xs sm:text-sm text-[#b35b28] hover:underline break-all"
                       >
                         {office.email}
                       </a>
@@ -154,8 +154,8 @@ export default function Contact() {
                   )}
 
                   {office.name && (
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-sm text-gray-500">
+                    <div className="pt-3 sm:pt-4 border-t border-gray-100">
+                      <p className="text-xs sm:text-sm text-gray-500">
                         {t('contact.contactLabels.contact')}: <span className="font-semibold text-gray-700">{office.name}</span>
                       </p>
                     </div>
@@ -168,17 +168,17 @@ export default function Contact() {
       </section>
 
       {/* ---------- MAP SECTION ---------- */}
-      <section className="max-w-7xl mx-auto mb-20 px-6 md:px-12">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-          <div className="p-6 bg-gradient-to-r from-[#1b2b3d] to-[#2d4a6a] text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+      <section className="max-w-7xl mx-auto mb-12 sm:mb-16 md:mb-20 px-4 sm:px-6 md:px-12">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+          <div className="p-4 sm:p-6 bg-gradient-to-r from-[#1b2b3d] to-[#2d4a6a] text-white">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">
               {t('contact.locations.title')}
             </h2>
-            <p className="text-white/80 text-sm">
+            <p className="text-white/80 text-xs sm:text-sm">
               Visit our main factory in Suzhou, China
             </p>
           </div>
-          <div className="relative h-[500px]">
+          <div className="relative h-[300px] sm:h-[400px] md:h-[500px]">
             <iframe
               title={t('contact.locations.mapTitle')}
               src={`https://www.google.com/maps?q=${t('contact.locations.mapQuery')}&output=embed`}

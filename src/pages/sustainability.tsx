@@ -38,7 +38,7 @@ export default function Sustainability() {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* HERO SECTION */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center text-white text-center overflow-hidden">
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center justify-center text-white text-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/sustanibility/sustanibilitybg.jpg"
@@ -47,27 +47,27 @@ export default function Sustainability() {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">{t('sustainability.hero.title')}</h1>
-          <p className="text-lg md:text-xl text-gray-200">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4">{t('sustainability.hero.title')}</h1>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200">
             {t('sustainability.hero.subtitle')}
           </p>
         </div>
       </section>
 
       {/* CONTENT SECTION */}
-      <section className="max-w-6xl mx-auto py-16 px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <section className="max-w-6xl mx-auto py-12 sm:py-16 px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
           {/* LEFT COLUMN: list of topics */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-[#b35b28] mb-4">
+          <div className="space-y-4 sm:space-y-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-[#b35b28] mb-3 sm:mb-4">
               {t('sustainability.focus')}
             </h2>
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               {topics.map((topic, idx) => (
-                <li key={idx} className="border-b pb-4">
-                  <h3 className="text-lg font-bold">{topic.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{topic.desc}</p>
+                <li key={idx} className="border-b pb-3 sm:pb-4">
+                  <h3 className="text-base sm:text-lg font-bold">{topic.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 mt-1">{topic.desc}</p>
                 </li>
               ))}
             </ul>
@@ -86,13 +86,13 @@ export default function Sustainability() {
       </section>
 
       {/* CERTIFICATES SECTION */}
-      <section className="py-16 px-6 md:px-12 bg-white">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8 sm:mb-12">
             {t('sustainability.certificationsTitle')}
           </h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
             {certificates.map((cert) => (
               <div
                 key={cert.id}
@@ -102,7 +102,7 @@ export default function Sustainability() {
                   <img
                     src={cert.image}
                     alt={`Certificate ${cert.id}`}
-                    className="w-full h-full object-contain p-2"
+                    className="w-full h-full object-contain p-1 sm:p-2"
                   />
                 </div>
               </div>

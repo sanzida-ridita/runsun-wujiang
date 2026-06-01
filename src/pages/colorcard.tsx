@@ -268,7 +268,7 @@ const TabButton = ({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-full border text-sm md:text-base transition
+      className={`px-3 sm:px-4 py-2 rounded-full border text-xs sm:text-sm md:text-base transition
         ${
           active
             ? "bg-[#b35b28] text-white border-[#b35b28]"
@@ -281,8 +281,8 @@ const TabButton = ({
 };
 
 const CardGrid = ({ items, showPdf, onCardClick }: { items: Card[]; showPdf?: boolean; onCardClick?: (card: Card) => void }) => (
-  <section className="py-16 px-6 md:px-16 bg-gray-50 text-gray-800">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-16 bg-gray-50 text-gray-800">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
       {items.map((card, index) => (
         <div
           key={index}
@@ -294,16 +294,16 @@ const CardGrid = ({ items, showPdf, onCardClick }: { items: Card[]; showPdf?: bo
           <img
             src={card.img}
             alt={card.title}
-            className="w-full h-64 object-cover"
+            className="w-full h-48 sm:h-56 md:h-64 object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-center p-4">
-            <h3 className="text-xl font-bold text-yellow-300 mb-2">
+          <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-center p-3 sm:p-4">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-yellow-300 mb-2">
               {card.title}
             </h3>
-            <p className="text-sm text-white/90 mb-4">{card.desc}</p>
+            <p className="text-xs sm:text-sm text-white/90 mb-3 sm:mb-4 line-clamp-2">{card.desc}</p>
             {showPdf && card.pdfLink && (
-              <div className="mt-2 px-4 py-2 bg-[#b35b28] text-white rounded-lg text-sm font-semibold hover:bg-[#a04d20] transition">
+              <div className="mt-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#b35b28] text-white rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#a04d20] transition">
                 View PDF
               </div>
             )}
@@ -350,26 +350,26 @@ const ColorCard = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="relative h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
+      <section className="relative h-[35vh] sm:h-[40vh] md:h-[55vh] flex items-center justify-center text-white text-center">
         <img
           src="/assets/images/colorCardBanner.jpg"
           alt={t('colorCard.hero.alt')}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 max-w-2xl p-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">
+        <div className="relative z-10 max-w-2xl px-4 sm:p-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
             {t('colorCard.hero.title')}
           </h1>
-          <p className="text-lg">
+          <p className="text-sm sm:text-base md:text-lg">
             {t('colorCard.hero.subtitle')}
           </p>
         </div>
       </section>
 
       {/* Tabs overlay (above hero) */}
-      <div className="relative z-20 -mt-10 max-w-7xl mx-auto px-6 md:px-10 mb-8">
-        <div className="bg-white shadow-md rounded-2xl p-3 flex gap-3 flex-wrap justify-center">
+      <div className="relative z-20 -mt-6 sm:-mt-8 md:-mt-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-10 mb-6 sm:mb-8">
+        <div className="bg-white shadow-md rounded-xl sm:rounded-2xl p-2 sm:p-3 flex gap-2 sm:gap-3 flex-wrap justify-center w-fit mx-auto">
           <TabButton active={tab === "color"} onClick={() => setTab("color")}>
             {t('colorCard.tabs.colorCards')} (6)
           </TabButton>
@@ -383,7 +383,7 @@ const ColorCard = () => {
       </div>
 
       {/* Title + Grid */}
-      <h2 className="text-3xl font-semibold text-center text-[#b35b28] mb-2">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center text-[#b35b28] mb-4 sm:mb-6">
         {title}
       </h2>
       <CardGrid items={items} showPdf={tab !== "models"} onCardClick={handleCardClick} />
