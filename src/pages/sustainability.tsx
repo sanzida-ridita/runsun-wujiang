@@ -89,7 +89,7 @@ export default function Sustainability() {
       <section className="py-16 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            Our Certifications
+            {t('sustainability.certificationsTitle')}
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
