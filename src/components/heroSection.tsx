@@ -2,9 +2,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-import hero1 from "../assets/hero1.jpg";
-import hero2 from "../assets/hero2.jpg";
-import hero3 from "../assets/hero3.jpg";
+import BG1 from "../assets/BG1.jpeg";
+import BG2 from "../assets/BG2.jpg";
+import BG3 from "../assets/BG3.jpg";
 
 
 export default function HeroSection() {
@@ -22,9 +22,9 @@ export default function HeroSection() {
   );
 
   const slides = [
-    { id: 1, image: hero1, alt: t('heroSection.alt1') },
-    { id: 2, image: hero2, alt: t('heroSection.alt2') },
-    { id: 3, image: hero3, alt: t('heroSection.alt3') },
+    { id: 1, image: BG1, alt: t('heroSection.alt1') },
+    { id: 2, image: BG2, alt: t('heroSection.alt2') },
+    { id: 3, image: BG3, alt: t('heroSection.alt3') },
   ];
 
   if (!mounted) {
